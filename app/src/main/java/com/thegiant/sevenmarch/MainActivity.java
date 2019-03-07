@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         SharedPreferences sharedPreferences=getSharedPreferences("themohit96.sharedprefdemo",MODE_PRIVATE);
         String string=sharedPreferences.getString("name","user");
+        Boolean remem=sharedPreferences.getBoolean("bool",false);
+        Toast.makeText(getApplicationContext(), "bool"+remem, Toast.LENGTH_SHORT).show();
         editText.setText(string);
     }
 }
